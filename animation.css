@@ -1,0 +1,90 @@
+/*Background and reset styling*/
+html {
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  margin: 0 10px;
+  background: url("img/canvas.jpg") no-repeat 100% 100%;
+  background-size: cover;
+}
+
+/*Heading, and heading description*/
+.title {
+  display: block;
+  background-color: rgba(255, 172, 109, 0.6);
+  box-shadow: 10px 10px 5px 5px #787878;
+  border-style: double;
+  border: 2px solid #1e1e1e;
+  border-radius: 0 0 30px 30px;
+}
+
+.title h2 {
+  color: #1e1e1e;
+  text-align: center;
+  font-weight: 800;
+  font-size: 25px;
+  font-family: 'Joti One', cursive;
+}
+
+.title h1 {
+  color: #1e1e1e;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Joti One', cursive;
+}
+
+/*Path*/
+.outline {
+  position: absolute;
+  margin: 0 auto;
+  left: 50%;
+  top: 50%;
+  margin-left: -220px;
+  margin-top: -110px;
+  padding-top: 40px;
+  stroke-dasharray: 4000; /*4000 sub-paths surrounding path*/
+  stroke-dashoffset: 4000; /*Each sub-path offsetted by a distance greater than whole path*/
+  animation: draw 10s linear forwards;
+  -webkit-animation: draw 10s linear 2s infinite;
+}
+
+.outline path {
+  fill: none;
+}
+
+.outline path:hover {
+  fill: #000;
+}
+
+@keyframes draw {
+  from {
+    stroke: #332216
+  }
+  to {
+    stroke-dashoffset: 0; /*Gradually reduce the offset, so instead of a single path, the illusion is created*/
+    stroke: #FE0102;
+  }
+}
+
+/*Divider and footer*/
+.divider {
+  color: black;
+  margin-top: 50vh;
+}
+
+footer h3 {
+  position: absolute;
+  font-family: 'Joti One', cursive;
+  font-size: 20px;
+  margin: 0 auto;
+  left: 40vw;
+}
+
+footer p {
+  position: absolute;
+  font-family: 'Joti One', cursive;
+  font-size: 15px;
+  margin: 30px;
+}
